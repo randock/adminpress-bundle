@@ -1,0 +1,16 @@
+{% extends '@KnpMenu/menu.html.twig' %}
+
+{% import "knp_menu.html.twig" as macros %}
+
+{% block spanElement %}
+    {% if item.getAttribute('role') != 'separator' %}
+        <span{{ knp_menu.attributes(item.labelAttributes) }}>{{ block('label') }}</span>
+    {% endif %}
+{% endblock %}
+
+{% block linkElement %}
+    <a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
+    {%- if item.getExtra('icon') is not null %}<i class="ti-{{ item.getExtra('icon') }}"></i> {% endif %}
+        {{ block('label') }}
+    </a>
+{% endblock %}

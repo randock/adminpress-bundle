@@ -1,0 +1,397 @@
+/*
+Template Name: Admin Press Admin
+Author: Themedesigner
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+
+@import 'variable';
+
+
+/*============================================================== 
+ For all pages 
+ ============================================================== */
+
+#main-wrapper {
+    width: 100%;
+}
+
+.boxed #main-wrapper {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+    .sidebar-footer {
+        position: absolute;
+    }
+    .footer {
+        display: none;
+    }
+}
+
+.page-wrapper {
+    background: $bodycolor;
+    padding-bottom: 60px;
+}
+
+.container-fluid {
+    padding: 0 30px 25px 30px;
+}
+
+
+
+/*******************
+ Topbar
+*******************/
+
+.topbar {
+    position: relative;
+    z-index: 50;
+    .top-navbar {
+        min-height: 50px;
+        padding: 0px 15px 0 0;
+        .dropdown-toggle::after {
+            display: none;
+        }
+        .navbar-header {
+            line-height: 45px;
+            text-align: center;
+            .navbar-brand {
+                margin-right: 0px;
+                padding-bottom: 0px;
+                padding-top: 0px;
+                .light-logo {
+                    display: none;
+                }
+                b {
+                    line-height: 60px;
+                    display: inline-block;
+                }
+            }
+        }
+        .navbar-nav>.nav-item>.nav-link {
+            padding-left: .75rem;
+            padding-right: .75rem;
+            font-size: 15px;
+            line-height: 40px;
+        }
+        .navbar-nav>.nav-item.show {
+            background: $dark-transparent;
+        }
+    }
+    .profile-pic {
+        width: 30px;
+        border-radius: 100%;
+    }
+    .dropdown-menu {
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        border-color: $border;
+        .dropdown-item {
+            padding: 7px 1.5rem;
+        }
+    }
+    ul.dropdown-user {
+        padding: 0px;
+        min-width: 270px;
+        li {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            &.divider {
+                height: 1px;
+                margin: 9px 0;
+                overflow: hidden;
+                background-color: $border;
+            }
+            .dw-user-box {
+                padding: 10px 15px;
+                .u-img {
+                    width: 70px;
+                    display: inline-block;
+                    vertical-align: top;
+                    img {
+                        width: 100%;
+                        border-radius: 5px;
+                    }
+                }
+                .u-text {
+                    display: inline-block;
+                    padding-left: 10px;
+                    h4 {
+                        margin: 0px;
+                        font-size: 15px;
+                    }
+                    p {
+                        margin-bottom: 2px;
+                        font-size: 12px;
+                    }
+                    .btn {
+                        color: $white;
+                        padding: 5px 10px;
+                        display: inline-block;
+                        &:hover {
+                            background: $danger-dark;
+                        }
+                    }
+                }
+            }
+            a {
+                padding: 9px 15px;
+                display: block;
+                color: $bodytext;
+                &:hover {
+                    background: $light;
+                    color: $themecolor;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.search-box {
+    .app-search {
+        position: absolute;
+        margin: 0px;
+        display: block;
+        z-index: 110;
+        width: 100%;
+        top: -1px;
+        box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        left: 0px;
+        input {
+            width: 100.5%;
+            padding: 20px 40px 20px 20px;
+            border-radius: 0px;
+            font-size: 17px;
+            transition: 0.5s ease-in;
+            height: 61px;
+            &:focus {
+                border-color: $white;
+            }
+        }
+        .srh-btn {
+            position: absolute;
+            top: 23px;
+            cursor: pointer;
+            background: $white;
+            width: 15px;
+            height: 15px;
+            right: 20px;
+            font-size: 14px;
+        }
+    }
+}
+
+.mini-sidebar .top-navbar {
+    .navbar-header {
+        width: 60px;
+        text-align: center;
+    }
+}
+
+.logo-center {
+    .top-navbar {
+        .navbar-header {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+
+/*******************
+ Breadcrumb and page title
+*******************/
+
+.page-titles {
+    background: $white;
+    margin: 0 0px 30px;
+    padding: 15px 10px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    h3 {
+        margin-bottom: 0px;
+        margin-top: 0px;
+    }
+    .breadcrumb {
+        padding: 0px;
+        background: transparent;
+        font-size: 14px;
+        li {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: "\e649";
+            font-family: themify;
+            color: $light-text;
+            font-size: 11px;
+        }
+        .breadcrumb-item.active {
+            color: $muted;
+        }
+    }
+}
+
+
+
+/*******************
+ Right side toggle
+*******************/
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotate {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.right-side-toggle {
+    position: relative;
+}
+
+.right-side-toggle i {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+    transition-property: transform;
+    transition-duration: 1s;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotate;
+    -moz-animation-duration: 2s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: absolute;
+    top: 18px;
+    left: 18px;
+}
+
+.right-sidebar {
+    position: fixed;
+    right: -240px;
+    width: 240px;
+    display: none;
+    z-index: 1100;
+    background: $white;
+    top: 0px;
+    padding-bottom: 20px;
+    height: 100%;
+    box-shadow: 5px 1px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    .rpanel-title {
+        display: block;
+        padding: 19px 20px;
+        color: $white;
+        text-transform: uppercase;
+        font-size: 15px;
+        background: $themecolor;
+        span {
+            float: right;
+            cursor: pointer;
+            font-size: 11px;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+    .r-panel-body {
+        padding: 20px;
+        ul {
+            margin: 0px;
+            padding: 0px;
+            li {
+                list-style: none;
+                padding: 5px 0;
+            }
+        }
+    }
+}
+
+.shw-rside {
+    right: 0px;
+    width: 240px;
+    display: block;
+}
+
+.chatonline {
+    img {
+        margin-right: 10px;
+        float: left;
+        width: 30px;
+    }
+    li a {
+        padding: 13px 0;
+        float: left;
+        width: 100%;
+        span {
+            color: $bodytext;
+            small {
+                display: block;
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+
+
+/*******************
+ page title
+*******************/
+
+.page-titles {
+    padding-bottom: 20px;
+}
+
+
+
+/*******************
+ Footer
+*******************/
+
+.footer {
+    bottom: 0;
+    color: $bodytext;
+    left: 0px;
+    padding: 17px 15px;
+    position: absolute;
+    right: 0;
+    border-top: 1px solid $border;
+    background: $white;
+}

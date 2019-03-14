@@ -1,0 +1,8 @@
+{% block body_profile_menu_header %}
+{% endblock body_profile_menu_header %}
+
+{{
+    knp_menu_render('profileMenu', {
+        'template': '@RandockAdminPress/menu/profilemenu.html.twig'
+    })
+}}

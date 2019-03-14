@@ -1,0 +1,13 @@
+<a href="#">
+    <div class="user-img">
+        <img src="{{ message.icon }}" class="img-circle">
+        {% if message.type %}
+        <span class="profile-status {{ message.type }} pull-right"></span>
+        {% endif %}
+    </div>
+    <div class="mail-contnet">
+        <h5>{{ message.title }}</h5>
+        <span class="mail-desc">{{ message.subTitle }}</span>
+        <span class="time">{{ message.time | localizeddate('short', 'short', app.request.locale) }}</span>
+    </div>
+</a>

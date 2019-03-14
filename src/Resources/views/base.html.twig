@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block header_title 'AdminPress by Randock' %}</title>
+
+    {% block header_extras %}
+    {% endblock header_extras %}
+
+    {% block header_css %}
+        {{ encore_entry_link_tags('adminpress_css') }}
+        {{ encore_entry_link_tags('adminpress_theme') }}
+    {% endblock header_css %}
+
+    {% block header_script %}
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    {% endblock header_script %}
+</head>
+
+<body class="{% block body_class 'fix-header fix-sidebar' %}">
+
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+{% block loader %}
+    {% include '@RandockAdminPress/components/loader.html.twig' %}
+{% endblock loader %}
+
+
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+            {% block navbar_brand %}
+                {% embed '@RandockAdminPress/components/navbar_brand.html.twig' %}
+                    {% block navbar_brand_dark_logo_icon 'https://via.placeholder.com/40' %}
+                    {% block navbar_brand_light_logo_icon 'https://via.placeholder.com/40' %}
+                    {% block navbar_brand_dark_logo_text 'https://via.placeholder.com/128x19' %}
+                    {% block navbar_brand_light_logo_text 'https://via.placeholder.com/128x19' %}
+                {% endembed %}
+            {% endblock navbar_brand %}
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse">
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav mr-auto mt-md-0">
+
+                    {% block navbar_menu_btn %}
+                        {% include '@RandockAdminPress/components/navbar_menu_btn.html.twig' %}
+                    {% endblock navbar_menu_btn %}
+
+                    {{ notifications() }}
+
+                    {% block navbar_extra '' %}
+
+                </ul>
+                <!-- ============================================================== -->
+                <!-- User profile and search -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav my-lg-0">
+                    <!-- ============================================================== -->
+                    <!-- Search -->
+                    <!-- ============================================================== -->
+                    {% block navbar_search %}
+                        {% include '@RandockAdminPress/components/navbar_search.html.twig' %}
+                    {% endblock navbar_search %}
+
+                    <!-- ============================================================== -->
+                    <!-- Language -->
+                    <!-- ============================================================== -->
+                    {% block body_lang_menu %}
+                        {% include '@RandockAdminPress/components/lang_menu.html.twig' %}
+                    {% endblock body_lang_menu %}
+
+                    <!-- ============================================================== -->
+                    <!-- Profile -->
+                    <!-- ============================================================== -->
+                    {% block body_profile_menu %}
+                    <li class="nav-item dropdown">
+                        {% block body_profile_menu_icon %}
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://via.placeholder.com/70" alt="user" class="profile-pic" />
+                            </a>
+                        {% endblock body_profile_menu_icon %}
+
+                        <div class="dropdown-menu dropdown-menu-right scale-up">
+                            {% block body_profile_menu_menu %}
+                                {% embed '@RandockAdminPress/components/profile_menu_menu.html.twig' %}
+                                    {% block body_profile_menu_header %}
+                                    {% endblock body_profile_menu_header %}
+                                {% endembed %}
+                            {% endblock body_profile_menu_menu %}
+                        </div>
+                    </li>
+                    {% endblock body_profile_menu %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- User profile -->
+            {% block left_sidebar_user_profile %}
+            {% endblock left_sidebar_user_profile %}
+
+            <!-- Sidebar navigation-->
+            {{ include('@RandockAdminPress/components/sidebar_nav.html.twig') }}
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+                {% block section_title %}
+                    <h3 class="text-themecolor"></h3>
+                {% endblock section_title %}
+            </div>
+            <div class="col-md-7 align-self-center">
+            {% block breadcrums %}
+            {% endblock breadcrums %}
+            </div>
+
+            <div class="right-side-toggle">
+                {% block right_side_toggle %}
+                    <button class="waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                {% endblock right_side_toggle %}
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+
+            <!-- ============================================================== -->
+            <!-- Page Content -->
+            <!-- ============================================================== -->
+
+            {% block page_content '' %}
+
+            <!-- ============================================================== -->
+            <!-- End Page Content -->
+            <!-- ============================================================== -->
+
+
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+
+            {% block right_sidebar %}
+                {% embed "@RandockAdminPress/components/right_sidebar.html.twig" %}
+                    {% block right_panel_title ''  %}
+                    {% block right_panel_body ''  %}
+                {% endembed %}
+            {% endblock right_sidebar %}
+
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            {% block footer '© 2019 AdminPressBundle by Randock' %}
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+
+{% block inline_js %}
+{{ encore_entry_script_tags('adminpress_js') }}
+{% endblock inline_js %}
+
+</body>
+
+</html>

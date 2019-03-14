@@ -1,0 +1,51 @@
+services:
+
+    randock_admin_press.menu.main_menu_builder:
+        class: 'Randock\AdminPressBundle\Model\Menu\MainMenuBuilder'
+        arguments:
+          - "@knp_menu.factory"
+          - "@service_container"
+
+    randock_admin_press.menu.main_menu:
+        class: Knp\Menu\MenuItem
+        public: true
+        factory: ["@randock_admin_press.menu.main_menu_builder", createMenu]
+        arguments: ["mainMenu", "@request_stack"]
+        tags:
+          - {name: knp_menu.menu, alias: mainMenu}
+
+    randock_admin_press.menu.profile_menu_builder:
+        class: 'Randock\AdminPressBundle\Model\Menu\ProfileMenuBuilder'
+        arguments:
+          - "@knp_menu.factory"
+          - "@service_container"
+
+    randock_admin_press.menu.profile_menu:
+        class: Knp\Menu\MenuItem
+        public: true
+        factory: ["@randock_admin_press.menu.profile_menu_builder", createMenu]
+        arguments: ["profileMenu", "@request_stack"]
+        tags:
+          - {name: knp_menu.menu, alias: profileMenu}
+
+    randock_admin_press.menu.lang_menu_builder:
+        class: Randock\AdminPressBundle\Model\Menu\LangMenuBuilder
+        arguments: ['@request_stack', '@router']
+
+    randock_admin_press.twig.lang_menu:
+        class: Randock\AdminPressBundle\Twig\LangMenuExtension
+        arguments:
+          - '@randock_admin_press.menu.lang_menu_builder'
+        tags:
+          - { name: twig.extension }
+
+    randock_admin_press.notification_provider_collector:
+        class: Randock\AdminPressBundle\Model\Notification\NotificationProviderCollector
+
+    randock_admin_press:
+        class: Randock\AdminPressBundle\Twig\NotificationsExtension
+        arguments:
+          - '@randock_admin_press.notification_provider_collector'
+        tags:
+          - { name: twig.extension }
+

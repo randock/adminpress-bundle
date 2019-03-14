@@ -1,0 +1,17 @@
+{% if lang_options_others() | length > 0 %}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {% set lang = lang_options_current() %}
+        <i class="flag-icon flag-icon-{{ lang['icon'] }}"></i>
+    </a>
+    {% set others = lang_options_others() %}
+    {% if others | length > 0 %}
+    <div class="dropdown-menu dropdown-menu-right scale-up">
+        {% for l in others %}
+        {% set href = path(app.request.attributes.get('_route'), app.request.query | merge({'_locale': l.code})) %}
+        <a class="dropdown-item" href="{{ href }}"><i class="flag-icon flag-icon-{{ l['icon'] }}"></i> {{ l['name'] }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+</li>
+{% endif %}

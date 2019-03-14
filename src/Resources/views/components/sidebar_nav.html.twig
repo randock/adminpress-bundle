@@ -1,0 +1,18 @@
+<nav class="sidebar-nav">
+    <ul id="sidebarnav">
+        <li class="nav-devider"></li>
+
+        {{ knp_menu_render('mainMenu',
+            {
+                'allow_safe_labels': true,
+                'ancestorClass' : 'active',
+                'currentClass': 'active',
+                'firstClass': null,
+                'lastClass': null,
+                'template' : '@RandockAdminPress/menu/mainmenu.html.twig',
+
+            })
+        }}
+
+    </ul>
+</nav>

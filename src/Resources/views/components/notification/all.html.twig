@@ -1,0 +1,12 @@
+<!-- ============================================================== -->
+<!-- Messages -->
+<!-- ============================================================== -->
+{% for provider in providers %}
+<li class="nav-item dropdown">
+    {% include '@RandockAdminPress/components/notification/navbar_icon.html.twig' with {provider: provider} %}
+    {% include '@RandockAdminPress/components/notification/toggle_window.html.twig' with {provider: provider} %}
+</li>
+{% endfor %}
+<!-- ============================================================== -->
+<!-- End Messages -->
+<!-- ============================================================== -->

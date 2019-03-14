@@ -1,0 +1,31 @@
+<div class="dropdown-menu mailbox animated slideInUp" aria-labelledby="2">
+    <ul>
+        {% if provider.panelTitle %}
+            <li>
+                <div class="drop-title">{{ provider.panelTitle }}</div>
+            </li>
+        {% endif %}
+        <li>
+            <div class="message-center">
+                <!-- Message -->
+                {% for n in provider.getNotifications %}
+                    {% include '@RandockAdminPress/components/notification/message.html.twig' with {message: n} %}
+                {% endfor %}
+                <!-- End Message -->
+            </div>
+        </li>
+        {% if provider.seeAllTitle %}
+        <li>
+
+            {% if provider.seeAllLink %}
+                <a class="nav-link text-center" href="{{ provider.seeAllLink }}"> <strong>{{ provider.seeAllTitle }}</strong>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            {% else %}
+                <div class="nav-link text-center"> <strong>{{ provider.seeAllTitle }}</strong>
+                </div>
+            {% endif %}
+        </li>
+        {% endif %}
+    </ul>
+</div>
