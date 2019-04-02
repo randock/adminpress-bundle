@@ -319,6 +319,10 @@ File: scss
     color: $success;
 }
 
+.has-success .form-control-success {
+    background-image: url(../img/icon/success.svg);
+}
+
 .has-success .form-control {
     border-color: $success;
 }
@@ -327,12 +331,20 @@ File: scss
     color: $warning;
 }
 
+.has-warning .form-control-warning {
+    background-image: url(../img/icon/warning.svg);
+}
+
 .has-warning .form-control {
     border-color: $warning;
 }
 
 .has-danger .col-form-label, .has-danger .custom-control, .has-danger .form-check-label, .has-danger .form-control-feedback, .has-danger .form-control-label {
     color: $danger;
+}
+
+.has-danger .form-control-danger {
+    background-image: url(../img/icon/danger.svg);
 }
 
 .has-danger .form-control {
@@ -407,4 +419,15 @@ File: scss
 
 .hidden-xl-down {
     display: none !important;
+}
+
+
+//* card -inverse-font-white
+.card-inverse {
+    .card-blockquote,
+    .card-footer,
+    .card-header,
+    .card-title {
+        color: $white;
+    }
 }

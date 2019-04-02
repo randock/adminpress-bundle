@@ -140,6 +140,9 @@ a.link {
 /*******************
 /*sidebar navigation
 *******************/
+.card-no-border .left-sidebar, .card-no-border .sidebar-nav{
+    background: $sidebar;
+}
 .mini-sidebar .sidebar-nav{
     background: transparent;
 }
@@ -154,6 +157,10 @@ a.link {
 .user-profile .profile-text a{
     color: $sidebar-text!important;
 }
+.card-no-border .sidebar-footer{
+    background: $sidebar-dark;
+}
+
 .label-themecolor{
     background:$themecolor; 
 }
