@@ -409,6 +409,19 @@ form p:last-child {
   transition: left 0.3s ease, background .3s ease, box-shadow 0.1s ease;
 }
 
+/* Change autofilled background ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+  //-webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+  -webkit-text-fill-color: $bodytext !important;
+}
+
 input[type=checkbox]:checked:not(:disabled) ~ .lever:active::after,
 input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::after {
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(38, 166, 154, 0.1);
@@ -455,6 +468,11 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
     -webkit-transform: scale(1);
   transform-origin: left 0px;
 }
+/*panels*/
+.card{
+   box-shadow:$box-shadow; 
+   border-radius:$radius;  
+}
 
 .well, pre{
   box-shadow:$box-shadow;
@@ -463,16 +481,15 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
 .page-titles .justify-content-end:last-child .d-flex{
   margin-right:10px;
 }
-
-.right-side-toggle{
-  .btn-circle {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    padding:25px;
-    z-index:10;
-  }
+.btn-circle.right-side-toggle{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:25px;
+  z-index:10;
 }
+
+
 
 /*Radio button*/
 @keyframes ripple {
@@ -486,6 +503,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
     box-shadow: 0px 0px 0px 15px transparent;
   }
 }
+
 
 /*Bootstrap Select*/
 .bootstrap-select.btn-group .dropdown-menu{
