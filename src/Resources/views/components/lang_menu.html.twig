@@ -8,7 +8,7 @@
     {% if others | length > 0 %}
     <div class="dropdown-menu dropdown-menu-right scale-up">
         {% for l in others %}
-        {% set href = path(app.request.attributes.get('_route'), app.request.query | merge({'_locale': l.code})) %}
+        {% set href = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params') | merge({'_locale': l.code})) %}
         <a class="dropdown-item" href="{{ href }}"><i class="flag-icon flag-icon-{{ l['icon'] }}"></i> {{ l['name'] }}</a>
         {% endfor %}
     </div>
