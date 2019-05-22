@@ -7,95 +7,95 @@ File: scss
 // Variables
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 
-$bodyfont:'Poppins', sans-serif;
-$headingfont:'Poppins', sans-serif; 
+$bodyfont:'Poppins', sans-serif !default;
+$headingfont:'Poppins', sans-serif !default; 
 
 
 /*Theme Colors*/
 
-$topbar: #1976d2;
-$sidebar: #fff;
-$sidebar-white: #e5edef;
-$sidebar-alt:#f2f6f8;
-$bodycolor: #eef5f9;
-$headingtext: #455a64;
-$bodytext: #67757c; 
-$sidebar-text: #607d8b;
-$sidebar-icons: #99abb4 ;
+$topbar: #1976d2 !default;
+$sidebar: #fff !default;
+$sidebar-white: #e5edef !default;
+$sidebar-alt:#f2f6f8 !default;
+$bodycolor: #eef5f9 !default;
+$headingtext: #455a64 !default;
+$bodytext: #67757c !default; 
+$sidebar-text: #607d8b !default;
+$sidebar-icons: #99abb4  !default;
 
-$light-text: #a6b7bf;
-$themecolor: #1976d2;
-$themecolor-alt: #26c6da;
-$themecolor-dark: #028ee1;
+$light-text: #a6b7bf !default;
+$themecolor: #1976d2 !default;
+$themecolor-alt: #26c6da !default;
+$themecolor-dark: #028ee1 !default;
 
 /*bootstrap Color*/
-$danger: #ef5350;
-$success: #26dad2;
-$warning: #ffb22b;
-$primary: #5c4ac7;
-$info: #1976d2;
-$inverse: #2f3d4a;
-$muted: #99abb4;
-$dark: #263238;
-$light: #f2f4f8;
-$extra-light: #ebf3f5;
-$bglight:rgba(0, 0, 0, 0.02);
+$danger: #ef5350 !default;
+$success: #26dad2 !default;
+$warning: #ffb22b !default;
+$primary: #5c4ac7 !default;
+$info: #1976d2 !default;
+$inverse: #2f3d4a !default;
+$muted: #99abb4 !default;
+$dark: #263238 !default;
+$light: #f2f4f8 !default;
+$extra-light: #ebf3f5 !default;
+$bglight:rgba(0, 0, 0, 0.02) !default;
 
 /*Light colors*/
-$light-danger: #f9e7eb;
-$light-success: #e8fdeb;
-$light-warning: #fff8ec;
-$light-primary: #f1effd;
-$light-info: #cfecfe;
-$light-inverse: #f6f6f6;
-$light-megna: #e0f2f4; 
+$light-danger: #f9e7eb !default;
+$light-success: #e8fdeb !default;
+$light-warning: #fff8ec !default;
+$light-primary: #f1effd !default;
+$light-info: #cfecfe !default;
+$light-inverse: #f6f6f6 !default;
+$light-megna: #e0f2f4 !default; 
 
 
 
-$danger-dark: #e6294b;
-$success-dark: #1eacbe;
-$warning-dark: #e9ab2e;
-$primary-dark: #6352ce;
-$info-dark: #028ee1;
-$red-dark: #d61f1f;
-$inverse-dark: #232a37;
-$dark-transparent:rgba(0, 0, 0, 0.05);
+$danger-dark: #e6294b !default;
+$success-dark: #1eacbe !default;
+$warning-dark: #e9ab2e !default;
+$primary-dark: #6352ce !default;
+$info-dark: #028ee1 !default;
+$red-dark: #d61f1f !default;
+$inverse-dark: #232a37 !default;
+$dark-transparent:rgba(0, 0, 0, 0.05) !default;
 
-$info-shadow: 0 2px 2px 0 rgba(66,165,245,.14), 0 3px 1px -2px rgba(66,165,245,.2), 0 1px 5px 0 rgba(66,165,245,.12);
-$info-shadow-hover:0 14px 26px -12px rgba(23,105,255,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(23,105,255,.2);
+$info-shadow: 0 2px 2px 0 rgba(66,165,245,.14), 0 3px 1px -2px rgba(66,165,245,.2), 0 1px 5px 0 rgba(66,165,245,.12) !default;
+$info-shadow-hover:0 14px 26px -12px rgba(23,105,255,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(23,105,255,.2) !default;
 
-$warning-shadow:0 2px 2px 0 rgba(248,194,0,.14), 0 3px 1px -2px rgba(248,194,0,.2), 0 1px 5px 0 rgba(248,194,0,.12);
-$warning-shadow-hover:0 14px 26px -12px rgba(248,194,0,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(248,194,0,.2);
+$warning-shadow:0 2px 2px 0 rgba(248,194,0,.14), 0 3px 1px -2px rgba(248,194,0,.2), 0 1px 5px 0 rgba(248,194,0,.12) !default;
+$warning-shadow-hover:0 14px 26px -12px rgba(248,194,0,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(248,194,0,.2) !default;
 
-$danger-shadow:0 2px 2px 0 rgba(239,83,80,.14), 0 3px 1px -2px rgba(239,83,80,.2), 0 1px 5px 0 rgba(239,83,80,.12);
-$danger-shadow-hover:0 14px 26px -12px rgba(239,83,80,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(239,83,80,.2);
+$danger-shadow:0 2px 2px 0 rgba(239,83,80,.14), 0 3px 1px -2px rgba(239,83,80,.2), 0 1px 5px 0 rgba(239,83,80,.12) !default;
+$danger-shadow-hover:0 14px 26px -12px rgba(239,83,80,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(239,83,80,.2) !default;
 
-$success-shadow:0 2px 2px 0 rgba(40,190,189,.14), 0 3px 1px -2px rgba(40,190,189,.2), 0 1px 5px 0 rgba(40,190,189,.12);
-$success-shadow-hover:0 14px 26px -12px rgba(40,190,189,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(40,190,189,.2);
+$success-shadow:0 2px 2px 0 rgba(40,190,189,.14), 0 3px 1px -2px rgba(40,190,189,.2), 0 1px 5px 0 rgba(40,190,189,.12) !default;
+$success-shadow-hover:0 14px 26px -12px rgba(40,190,189,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(40,190,189,.2) !default;
     
-$primary-shadow:0 2px 2px 0 rgba(116,96,238,.14), 0 3px 1px -2px rgba(116,96,238,.2), 0 1px 5px 0 rgba(116,96,238,.12);
-$primary-shadow-hover:0 14px 26px -12px rgba(116,96,238,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(116,96,238,.2);
+$primary-shadow:0 2px 2px 0 rgba(116,96,238,.14), 0 3px 1px -2px rgba(116,96,238,.2), 0 1px 5px 0 rgba(116,96,238,.12) !default;
+$primary-shadow-hover:0 14px 26px -12px rgba(116,96,238,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(116,96,238,.2) !default;
 
-$default-shadow:0 2px 2px 0 rgba(169,169,169,.14), 0 3px 1px -2px rgba(169,169,169,.2), 0 1px 5px 0 rgba(169,169,169,.12);
-$default-shadow-hover:0 14px 26px -12px rgba(169,169,169,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(169,169,169,.2);
+$default-shadow:0 2px 2px 0 rgba(169,169,169,.14), 0 3px 1px -2px rgba(169,169,169,.2), 0 1px 5px 0 rgba(169,169,169,.12) !default;
+$default-shadow-hover:0 14px 26px -12px rgba(169,169,169,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(169,169,169,.2) !default;
 
 /*Normal Color*/
-$white: #ffffff;
-$red: #fb3a3a;
-$yellow: #a0aec4;
-$purple: #7460ee;
-$blue: #02bec9;
-$megna: #00897b;
+$white: #ffffff !default;
+$red: #fb3a3a !default;
+$yellow: #a0aec4 !default;
+$purple: #7460ee !default;
+$blue: #02bec9 !default;
+$megna: #00897b !default;
 
 /*Extra Variable*/
-$rgt: right;
-$lft: left;
-$border: rgba(120, 130, 140, 0.13);
-$table-border:#f3f1f1;
-$card-brd:#d7dfe3;
-$dark-text: #848a96;
-$radius: 4px;
-$form-brd: #b1b8bb;
+$rgt: right !default;
+$lft: left !default;
+$border: rgba(120, 130, 140, 0.13) !default;
+$table-border:#f3f1f1 !default;
+$card-brd:#d7dfe3 !default;
+$dark-text: #848a96 !default;
+$radius: 4px !default;
+$form-brd: #b1b8bb !default;
 /*Preloader*/
 .preloader{
     width: 100%;

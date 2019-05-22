@@ -5,12 +5,13 @@ Email: niravjoshi87@gmail.com
 File: scss
 */
 
+$themecolor: #1976d2 !default;
+$themecolor-dark: #028ee1 !default;
+$topbar: #1976d2 !default;
+$topbar-alt: #ffffff !default;
+$themecolor-alt: #26c6da !default;
+
 @import '../variable';
-$themecolor: #1976d2;
-$themecolor-dark: #028ee1;
-$topbar: #1976d2;
-$topbar-alt: #ffffff;
-$themecolor-alt: #26c6da;
 /*******************
 /*Top bar
 *******************/
