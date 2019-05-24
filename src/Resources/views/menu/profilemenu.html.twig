@@ -10,7 +10,7 @@
 
 {% block linkElement %}
     <a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
-    {%- if item.getExtra('icon') is not null %}<i class="ti-{{ item.getExtra('icon') }}"></i> {% endif %}
+    {%- if item.getExtra('icon') is not null %}<i class="fas fa-{{ item.getExtra('icon') }}"></i> {% endif %}
         {{ block('label') }}
     </a>
 {% endblock %}
