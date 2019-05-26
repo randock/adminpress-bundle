@@ -137,6 +137,9 @@
             <!-- End Sidebar navigation -->
         </div>
         <!-- End Sidebar scroll-->
+
+        {% block left_sidebar_footer %}{% endblock %}
+
     </aside>
     <!-- ============================================================== -->
     <!-- End Left Sidebar - style you can find in sidebar.scss  -->
@@ -214,10 +217,11 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer">
-            {% block footer '© 2019 AdminPressBundle by Randock' %}
-        </footer>
-        <!-- ============================================================== -->
+        {% block footer %}
+            <footer class="footer">
+                {% block footer_text '© 2019 AdminPressBundle by Randock' %}
+            </footer>
+        {% endblock %}        <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
     </div>

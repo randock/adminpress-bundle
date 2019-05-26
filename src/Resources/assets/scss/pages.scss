@@ -2134,21 +2134,21 @@ table.dataTable thead .sorting_desc_disabled {
 table.dataTable thead .sorting_asc:after {
     content: "\f0de";
     margin-left: 10px;
-    font-family: fontawesome;
+    font-family: 'Font Awesome 5 Free';
     cursor: pointer;
 }
 
 table.dataTable thead .sorting_desc:after {
     content: "\f0dd";
     margin-left: 10px;
-    font-family: fontawesome;
+    font-family: 'Font Awesome 5 Free';
     cursor: pointer;
 }
 
 table.dataTable thead .sorting:after {
     content: "\f0dc";
     margin-left: 10px;
-    font-family: fontawesome !important;
+    font-family: 'Font Awesome 5 Free' !important;
     cursor: pointer;
     color: rgba(50, 50, 50, .5);
 }
