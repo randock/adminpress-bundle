@@ -18,7 +18,7 @@
 {% block spanElement %}
     {% if item.hasChildren %}
         <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
-            {%- if item.getExtra('icon') is not null -%}<i class="fas fa-fw fa-{{ item.getExtra('icon') }}"></i>&nbsp;{%- endif -%}
+            {%- if item.getExtra('icon') is not null -%}<i class="fas fa-fw fa-{{ item.getExtra('icon') }}"></i>{%- endif -%}
             <span class="hide-menu">{{ block('label') }}</span>
         </a>
     {% else %}
@@ -28,7 +28,7 @@
 
 {% block linkElement %}
     <a href="{{ item.uri }}"{{ macros.attributes(item.linkAttributes) }}>
-        {%- if item.getExtra('icon') is not null -%}<i class="fas fa-fw fa-{{ item.getExtra('icon') }}"></i>&nbsp;{%- endif -%}
-        {{ block('label') }}
+        {%- if item.getExtra('icon') is not null -%}<i class="fas fa-fw fa-{{ item.getExtra('icon') }}"></i>{%- endif -%}
+        <span{% if item.level == 1 %} class="hide-menu"{% endif %}>{{ block('label') }}</span>
     </a>
 {% endblock %}
