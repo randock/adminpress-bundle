@@ -9,12 +9,12 @@
     "ext-iconv": "*",
     "ext-intl": "*",
     "knplabs/knp-menu-bundle": "^2.2",
-    "symfony/framework-bundle": "4.2.*",
-    "symfony/translation": "4.2.*",
-    "symfony/twig-bundle": "4.2.*",
-    "symfony/validator": "4.2.*",
+    "symfony/framework-bundle": "^4.2",
+    "symfony/translation": "^4.2",
+    "symfony/twig-bundle": "^4.2",
+    "symfony/validator": "^4.2",
     "symfony/webpack-encore-bundle": "^1.1",
-    "symfony/yaml": "4.2.*",
+    "symfony/yaml": "^4.2",
     "twig/extensions": "^1.5"
   },
   "autoload": {
