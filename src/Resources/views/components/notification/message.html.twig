@@ -1,6 +1,8 @@
-<a href="#">
+<a href="{{ message.link ?: '#' }}">
     <div class="user-img">
-        <img src="{{ message.icon }}" class="img-circle">
+
+        <div class="btn btn-{{ message.color }} btn-circle"><i class="fa {{ message.icon }}"></i></div>
+
         {% if message.type %}
         <span class="profile-status {{ message.type }} pull-right"></span>
         {% endif %}
