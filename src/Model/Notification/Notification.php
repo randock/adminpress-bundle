@@ -8,10 +8,10 @@ use Randock\AdminPressBundle\Model\ValidationException;
 
 class Notification
 {
-    public const STATUS_ONLINE = 'online';
-    public const STATUS_BUSY = 'busy';
-    public const STATUS_AWAY = 'away';
-    public const STATUS_OFFLINE = 'offline';
+    public const TYPE_STATUS_ONLINE = 'online';
+    public const TYPE_STATUS_BUSY = 'busy';
+    public const TYPE_STATUS_AWAY = 'away';
+    public const TYPE_STATUS_OFFLINE = 'offline';
 
     /**
      * @var string
@@ -36,6 +36,11 @@ class Notification
     /**
      * @var string|null
      */
+    protected $color;
+
+    /**
+     * @var string|null
+     */
     protected $type;
 
     /**
@@ -48,6 +53,7 @@ class Notification
      * @param string|null             $subTitle
      * @param \DateTimeImmutable|null $time
      * @param string|null             $icon
+     * @param string|null             $color
      * @param string|null             $type
      * @param string|null             $link
      */
@@ -56,6 +62,7 @@ class Notification
         string $subTitle = null,
         \DateTimeImmutable $time = null,
         string $icon = null,
+        string $color = null,
         string $type = null,
         string $link = null
     ) {
@@ -63,6 +70,7 @@ class Notification
         $this->subTitle = $subTitle;
         $this->time = $time;
         $this->icon = $icon;
+        $this->color = $color;
         $this->type = $type;
         $this->link = $link;
     }
@@ -72,6 +80,7 @@ class Notification
      * @param string|null             $subTitle
      * @param \DateTimeImmutable|null $time
      * @param string|null             $icon
+     * @param string|null             $color
      * @param string|null             $type
      * @param string|null             $link
      *
@@ -84,6 +93,7 @@ class Notification
         ?string $subTitle = null,
         ?\DateTimeImmutable $time = null,
         ?string $icon = null,
+        ?string $color = null,
         ?string $type = null,
         ?string $link = null
     ): self {
@@ -93,21 +103,25 @@ class Notification
                 'subTitle' => $subTitle,
                 'time' => $time,
                 'icon' => $icon,
+                'color' => $color,
                 'type' => $type,
                 'link' => $link,
             ]
         );
 
-        return new static($title, $subTitle, $time, $icon, $type, $link);
+        return new static($title, $subTitle, $time, $icon, $color, $type, $link);
     }
 
+    /**
+     * @return array
+     */
     public static function getTypes(): array
     {
         return [
-            self::STATUS_ONLINE,
-            self::STATUS_BUSY,
-            self::STATUS_AWAY,
-            self::STATUS_OFFLINE,
+            self::TYPE_STATUS_ONLINE,
+            self::TYPE_STATUS_BUSY,
+            self::TYPE_STATUS_AWAY,
+            self::TYPE_STATUS_OFFLINE,
         ];
     }
 
@@ -141,6 +155,14 @@ class Notification
     public function getIcon(): ?string
     {
         return $this->icon;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getColor(): ?string
+    {
+        return $this->color;
     }
 
     /**
