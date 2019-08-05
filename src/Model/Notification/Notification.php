@@ -29,6 +29,11 @@ class Notification
     protected $time;
 
     /**
+     * @var bool
+     */
+    private $messageRead;
+
+    /**
      * @var string|null
      */
     protected $icon;
@@ -48,10 +53,12 @@ class Notification
      */
     protected $link;
 
+
     /**
      * @param string                  $title
      * @param string|null             $subTitle
      * @param \DateTimeImmutable|null $time
+     * @param bool                    $messageRead
      * @param string|null             $icon
      * @param string|null             $color
      * @param string|null             $type
@@ -61,6 +68,7 @@ class Notification
         string $title,
         string $subTitle = null,
         \DateTimeImmutable $time = null,
+        bool $messageRead = false,
         string $icon = null,
         string $color = null,
         string $type = null,
@@ -69,6 +77,7 @@ class Notification
         $this->title = $title;
         $this->subTitle = $subTitle;
         $this->time = $time;
+        $this->messageRead = $messageRead;
         $this->icon = $icon;
         $this->color = $color;
         $this->type = $type;
@@ -79,6 +88,7 @@ class Notification
      * @param string                  $title
      * @param string|null             $subTitle
      * @param \DateTimeImmutable|null $time
+     * @param bool|null               $messageRead
      * @param string|null             $icon
      * @param string|null             $color
      * @param string|null             $type
@@ -92,6 +102,7 @@ class Notification
         string $title,
         ?string $subTitle = null,
         ?\DateTimeImmutable $time = null,
+        ?bool $messageRead = null,
         ?string $icon = null,
         ?string $color = null,
         ?string $type = null,
@@ -102,6 +113,7 @@ class Notification
                 'title' => $title,
                 'subTitle' => $subTitle,
                 'time' => $time,
+                'messageRead' => $messageRead,
                 'icon' => $icon,
                 'color' => $color,
                 'type' => $type,
@@ -109,7 +121,7 @@ class Notification
             ]
         );
 
-        return new static($title, $subTitle, $time, $icon, $color, $type, $link);
+        return new static($title, $subTitle, $time, $messageRead, $icon, $color, $type, $link);
     }
 
     /**
@@ -179,5 +191,25 @@ class Notification
     public function getLink(): ?string
     {
         return $this->link;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMessageRead(): bool
+    {
+        return $this->messageRead;
+    }
+
+    /**
+     * @param bool $messageRead
+     *
+     * @return Notification
+     */
+    private function setMessageRead(bool $messageRead): self
+    {
+        $this->messageRead = $messageRead;
+
+        return $this;
     }
 }
