@@ -385,6 +385,13 @@ File: scss
             div {
                 white-space: normal;
             }
+            &.message.new {
+                .mail-contnet{
+                    h5 {
+                        font-weight: bold;
+                    }
+                }
+            }
             .user-img {
                 width: 45px;
                 position: relative;
