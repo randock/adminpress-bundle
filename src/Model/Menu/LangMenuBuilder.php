@@ -50,7 +50,7 @@ class LangMenuBuilder
         $locale = $this->requestStack->getCurrentRequest()->getLocale();
 
         foreach ($this->locales as $l) {
-            if ($locale === $l['code']) {
+            if ($locale === $l['code'] || strlen($l['code']) >= 2 && $locale === substr($l['code'], 0, 2)) {
                 return $l;
             }
         }
